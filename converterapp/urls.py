@@ -3,4 +3,6 @@ from . import views
 
 
 app_name = 'conv'
-urlpatterns = []
+urlpatterns = [
+    path('', views.convert_view),
+]

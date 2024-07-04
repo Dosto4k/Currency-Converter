@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <form method="get">
+            {{form}}
+            <button type="submit">Конвертировать</button>
+        </form>
+        {% if result_sum %}
+            <div class="result_sum">
+                {{result_sum}}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
