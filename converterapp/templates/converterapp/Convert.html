@@ -1,13 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="container">
-        <form method="get">
-            {{form}}
-            <button type="submit">Конвертировать</button>
+        {{ form.non_field_errors }}
+        <form method="get" class="form-converter">
+            <div class="block-fields">
+                {% for field in form %}
+                <div>{{field.error}}</div>
+                <div class="form-field">
+                    <label for="{{field.id_for_label}}">{{field.label}}</label>
+                    <div class="field">{{field}}</div>
+                </div>
+                {% endfor %}
+            </div>
+            <button class="btn" type="submit">Конвертировать</button>
         </form>
         {% if result_sum %}
             <div class="result_sum">
-                {{result_sum}}
+                <p>Итого: {{sum}} {{from}} = {{result_sum}} {{to}}</p>
             </div>
         {% endif %}
     </div>
