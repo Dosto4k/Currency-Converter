@@ -16,7 +16,6 @@ body {
 .container {
     border: 1px solid black;
     padding: 75px;
-    padding-bottom: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,7 +33,7 @@ body {
 }
 
 select {
-    width: 100px;
+    width: 130px;
     height: 80px;
     padding: 5px;
     border-radius: 15px;
@@ -56,7 +55,6 @@ input {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 50px;
 }
 
 
@@ -82,5 +80,6 @@ input {
 }
 
 .result_sum {
+    padding-top: 75px;
     color: white;
 }
