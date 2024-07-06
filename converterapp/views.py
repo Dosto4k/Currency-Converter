@@ -7,11 +7,14 @@ def convert_view(request):
     if request.GET:
         form = ConvForm(request.GET)
         if form.is_valid():
-            result_sum = get_convert_sum(
-                form.cleaned_data['from_'],
-                form.cleaned_data['to'],
-                form.cleaned_data['sum_']
-            )
+            if form.cleaned_data['from_'] == form.cleaned_data['to']:
+                result_sum = form.cleaned_data['sum_']
+            else:
+                result_sum = get_convert_sum(
+                    form.cleaned_data['from_'],
+                    form.cleaned_data['to'],
+                    form.cleaned_data['sum_']
+                )
         else:
             result_sum = False
         context = {
